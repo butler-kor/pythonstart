@@ -1,1 +1,1 @@
-# pythonstart
+ pythonstart 안녕하세요 파이썬 공부하는 사람입니다.
