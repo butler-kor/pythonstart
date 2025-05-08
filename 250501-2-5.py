@@ -25,3 +25,6 @@ if Question1 == "Y" or Question1 == "y" or Question1 == "1":
 else:
     print("프로그램을 종료합니다.")
     exit()
+    
+    
+    #주석 달아서 다르게 보이기
