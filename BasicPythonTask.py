@@ -83,10 +83,28 @@
 # print(num2)
 
 # 1부터 어떤 양의 정수 N까지의 정수를 모두 곱한 것
-InputNum = int(input("정수를 입력하세요:"))
-num1 = 1
-num2 = 1
-while num1 <= InputNum:
-    num2 *= num1
-    num1 += 1
-print(num2)
+# InputNum = int(input("정수를 입력하세요:"))
+# num1 = 1
+# num2 = 1
+# while num1 <= InputNum:
+#     num2 *= num1
+#     num1 += 1
+# print(num2)
+
+# 약수구하기
+FirstNum = int(input("첫번째 숫자를 정수로 입력하세요:"))
+SecondNum = int(input("두번째 숫자를 정수로 입력하세요:"))
+List1 = []
+List2 = []
+num1 = 0
+num2 = 0
+num3 = 0
+num4 = 0
+for i in range(1,FirstNum + 1):
+    if FirstNum % i == 0:
+        List1.append(i)
+for j in range(1,SecondNum + 1):
+    if SecondNum % j == 0:
+        List2.append(j)
+print(List1)
+print(List2)
