@@ -109,12 +109,3 @@ for j in range(1,SecondNum + 1):
         List2.append(j)
 print(List1)
 print(List2)
-=======
-InputNum = int(input("정수를 입력하세요:"))
-num1 = 1
-num2 = 1
-while num1 <= InputNum:
-    num2 *= num1
-    num1 += 1
-print(num2)
->>>>>>> ee1a1cedccb192ea666ed3f9e6ccc42a643bedb1
