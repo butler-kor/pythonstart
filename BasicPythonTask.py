@@ -72,12 +72,21 @@
 #     num1 *= i
 # print(num1)
 
-# 거듭제곱 값을 구하기 밑수와 지수의 값을 입력 받은 후 거듭제곱으로 값을 출력
-BaseNum = int(input("밑수를 입력하세요:"))
-ExponentNum = int(input("지수를 입력하세요:"))
-num1 = 0
+# # 거듭제곱 값을 구하기 밑수와 지수의 값을 입력 받은 후 거듭제곱으로 값을 출력
+# BaseNum = int(input("밑수를 입력하세요:"))
+# ExponentNum = int(input("지수를 입력하세요:"))
+# num1 = 0
+# num2 = 1
+# while num1 < ExponentNum:
+#     num2 *= BaseNum
+#     num1 = num1 +1
+# print(num2)
+
+# 1부터 어떤 양의 정수 N까지의 정수를 모두 곱한 것
+InputNum = int(input("정수를 입력하세요:"))
+num1 = 1
 num2 = 1
-while num1 < ExponentNum:
-    num2 *= BaseNum
-    num1 = num1 +1
+while num1 <= InputNum:
+    num2 *= num1
+    num1 += 1
 print(num2)
