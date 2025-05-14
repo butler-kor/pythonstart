@@ -17,6 +17,7 @@ if Choice2 == List[1]:
     Choice2 = random.choice(List[1])
     Choice2 = 'S' + str(Choice2)
 print(Choice2)
+#땡이 나오는 조건
 if (Choice1 == 'S1' or Choice1 == 'S3' or Choice1 == 'S8') and (Choice2 == 'S1' or Choice2 == 'S3' or Choice2 == 'S8'):
    print(f"{Choice1} {Choice2} 광땡 입니다.")
 elif Choice1 == Choice2:
