@@ -23,10 +23,10 @@ from zstandard.backend_cffi import STRATEGY_BTLAZY2
 
 #def를 이용하여 성적리스트를 받고 평균 값을 출력
 def Score(no1,no2,no3):
-   num1 = sum(no1) / len(no1)
-   num2 = sum(no2) / len(no2)
-   num3 = sum(no3) / len(no3)
-   return num1,num2,num3
+   result1 = sum(no1) / len(no1)
+   result2 = sum(no2) / len(no2)
+   result3 = sum(no3) / len(no3)
+   return result1,result2,result3
 
 List1 = ['수학','영어','과학','물리']
 List2 = []
@@ -46,11 +46,17 @@ for i in range(1,4):
         List2.append(num1)
         num3 = num3 + 1
     if num2 == 1:
-        no1Student.append(List2)
+        no1Student.extend(List2)
     elif num2 == 2 :
-        no2Student.append(List2)
+        no2Student.extend(List2)
     elif num2 == 3 :
-        no3Student.append(List2)
+        no3Student.extend(List2)
 print(no1Student)
 print(no2Student)
 print(no3Student)
+
+result = Score(no1Student,no2Student,no3Student)
+
+print(f"1번째 학생의 평균 값은 {result[0]} 입니다.")
+print(f"2번째 학생의 평균 값은 {result[1]} 입니다.")
+print(f"3번째 학생의 평균 값은 {result[2]} 입니다.")
