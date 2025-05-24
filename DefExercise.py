@@ -122,3 +122,10 @@ while True:
     LastNum = Calculator(FirstNum,Choice,SecondNum)
     FirstNum = LastNum
     print(FirstNum)
+
+
+# 시험 여러 숫자와 연산자를 받아서 한번에 처리하는 것을 도전
+# 구현하려는 방식 모든 계산을 한번에 받는다 예) 3*5 + (15/3) + 21 = 이라면
+# re.findall  을 이용하여 각 숫자 , 연산자 , 기호를 분리한다.
+# 아스키 코드를 이용하여 분리된 값의 우선순위를 지정한다.
+# 그 후에 계산한다.
