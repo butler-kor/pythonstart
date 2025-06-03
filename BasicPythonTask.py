@@ -239,18 +239,33 @@ from autopep8 import continued_indentation
 # print(Str1)
 
 # 250521  10진수 표현  2 진수를 받아서 10진수로 표현하기
-Str1 = input("2진수 숫자를 입력하세요(2진수는 0과 1로만 이루어진 숫자입니다.):")
-Str2 = ''
-num1 = 0
-num2 = -1
-while num1 < len(Str1):
-    Str2 = Str2 + Str1[num2]
-    num1 = num1 + 1
-    num2 = num2 - 1
-print(Str2)  # 20250522 추가 작성
-num1 = 0
-num2 = 0
-for i in Str1:
-    num1 += int(i) * (2 ** num2)
-    num2 = num2 + 1
-print(f"2진수 {Str1}을 10진수로 변환하면 {num1}가 됩니다.")
+# Str1 = input("2진수 숫자를 입력하세요(2진수는 0과 1로만 이루어진 숫자입니다.):")
+# Str2 = ''
+# num1 = 0
+# num2 = -1
+# while num1 < len(Str1):
+#     Str2 = Str2 + Str1[num2]
+#     num1 = num1 + 1
+#     num2 = num2 - 1
+# print(Str2)  # 20250522 추가 작성
+# num1 = 0
+# num2 = 0
+# for i in Str1:
+#     num1 += int(i) * (2 ** num2)
+#     num2 = num2 + 1
+# print(f"2진수 {Str1}을 10진수로 변환하면 {num1}가 됩니다.")
+
+#250524 초를 입력 받아서 몇날 , 몇시 , 몇분 , 몇초 인지를 계산하는 코드
+
+def DayHourMinSec(Second):
+    Day = int(Second // 86400)
+    Second %= 86400
+    Hour = int(Second // 3600)
+    Second %= 3600
+    Min = int(Second // 60)
+    Sec = int(Second % 60)
+    return Day,Hour,Min,Sec
+
+Second = int(input("계산하려는 초를 입력하세요"))
+LastNum = DayHourMinSec(Second)
+print(f"입력하신 {Second}초는 {LastNum[0]}일 {LastNum[1]}시간  {LastNum[2]}분  {LastNum[3]}초 입니다.")
