@@ -257,15 +257,35 @@ from autopep8 import continued_indentation
 
 #250524 초를 입력 받아서 몇날 , 몇시 , 몇분 , 몇초 인지를 계산하는 코드
 
-def DayHourMinSec(Second):
-    Day = int(Second // 86400)
-    Second %= 86400
-    Hour = int(Second // 3600)
-    Second %= 3600
-    Min = int(Second // 60)
-    Sec = int(Second % 60)
-    return Day,Hour,Min,Sec
+# def DayHourMinSec(Second):
+#     Day = int(Second // 86400)
+#     Second %= 86400
+#     Hour = int(Second // 3600)
+#     Second %= 3600
+#     Min = int(Second // 60)
+#     Sec = int(Second % 60)
+#     return Day,Hour,Min,Sec
+#
+# Second = int(input("계산하려는 초를 입력하세요"))
+# LastNum = DayHourMinSec(Second)
+# print(f"입력하신 {Second}초는 {LastNum[0]}일 {LastNum[1]}시간  {LastNum[2]}분  {LastNum[3]}초 입니다.")
 
-Second = int(input("계산하려는 초를 입력하세요"))
-LastNum = DayHourMinSec(Second)
-print(f"입력하신 {Second}초는 {LastNum[0]}일 {LastNum[1]}시간  {LastNum[2]}분  {LastNum[3]}초 입니다.")
+#영어로 된 문장을 입력하여 대문자와 소문자가 나온 횟수를 구하는 코드
+
+def CapitalSmallLetter(Instr):
+    num1 = 0
+    CapitalLetter = 0
+    SmallLetter = 0
+    while num1 < len(InStr):
+        if InStr[num1] > chr(64) and InStr[num1] < chr(91):
+            CapitalLetter += 1
+        elif InStr[num1] > chr(97) and InStr[num1] < chr(123):
+            SmallLetter += 1
+        num1 += 1
+    return CapitalLetter,SmallLetter
+
+
+InStr = input("영어로 된 문장을 입력하세요:")
+InStr1 = CapitalSmallLetter(InStr)
+print(f"입력하신 문장의 대문자는 {InStr1[0]}개 입니다.")
+print(f"입력하신 문장의 소문자는 {InStr1[1]}개 입니다.")
