@@ -62,70 +62,117 @@ from zstandard.backend_cffi import STRATEGY_BTLAZY2
 # print(f"3번째 학생의 평균 값은 {result[2]} 입니다.")
 
 # 250524 def 연습 기본계산기
-def Calculator(FirstNum,Choice,SecondNum):
-   def add(FN,SN):
-       return FN + SN
+# def Calculator(FirstNum,Choice,SecondNum):
+#    def add(FN,SN):
+#        return FN + SN
+#
+#    def sub(FN,SN):
+#        return FN - SN
+#
+#    def mul(FN,SN):
+#        return FN * SN
+#
+#    def div(FN,SN):
+#        if FN == 0 and SN == 0:
+#            return "0으로는 숫자를 나눌 수가 없습니다."
+#        else:
+#            return FN / SN
+#    def power(FN,SN):
+#         return FN ** SN
+#
+#    if Choice == 1:
+#        return add(FirstNum,SecondNum)
+#
+#    elif Choice == 2 :
+#        return sub(FirstNum,SecondNum)
+#
+#    elif Choice == 3:
+#        return mul(FirstNum, SecondNum)
+#
+#    elif Choice == 4:
+#        return div(FirstNum, SecondNum)
+#
+#    elif Choice == 5:
+#        return power(FirstNum, SecondNum)
+#
+#    else:
+#        return "잘못된 선택입니다."
+#
+#
+#
+# FirstNum = int(input("첫번째 숫자를 입력하세요:"))
+# while True:
+#     Choice = input("수식을 입력하세요 : 1) 더하기 , 2)빼기 , 3)곱하기 , 4)나누기, 5)거듭제곱 :")
+#     SecondNum = int(input("두번째 숫자를 입력하세요:"))
+#     if Choice == "1" or Choice == "1번" or Choice == "더하기" or Choice == "+":
+#         Choice = 1
+#
+#     elif Choice == "2" or Choice == "2번" or Choice == "빼기" or Choice == "-":
+#           Choice = 2
+#
+#     elif Choice == "3" or Choice == "3번" or Choice == "곱하기" or Choice == "*":
+#           Choice = 3
+#
+#     elif Choice == "4" or Choice == "4번" or Choice == "나누기" or Choice == "/":
+#           Choice = 4
+#
+#     elif Choice == "5" or Choice == "5번" or Choice == "거듭제곱" or Choice == "**":
+#           Choice = 5
+#
+#     LastNum = Calculator(FirstNum,Choice,SecondNum)
+#     FirstNum = LastNum
+#     print(FirstNum)
 
-   def sub(FN,SN):
-       return FN - SN
 
-   def mul(FN,SN):
-       return FN * SN
+# 217번 문제 현재 가격을 입력 받아 상한가(30%)를 출력하는 print_upper_price 함수를 정의하라.
+# def print_upper_price(Innum):
+#     return Innum * 1.3
+#
+# num1 = int(input("값을 입력하시오:"))
+# Innum = print_upper_price(num1)
+# print(Innum)
 
-   def div(FN,SN):
-       if FN == 0 and SN == 0:
-           return "0으로는 숫자를 나눌 수가 없습니다."
-       else:
-           return FN / SN
-   def power(FN,SN):
-        return FN ** SN
+# 218번 문제 두 개의 숫자를 입력받아 두 수의 합을 출력하는 print_sum 함수를 정의하라.
+# def print_sum(FirstNum,SecondNum):
+#     sum = FirstNum + SecondNum
+#     return sum
+#
+# num1 = int(input("첫번째 숫자를 입력하시오:"))
+# num2 = int(input("두번째 숫자를 입력하시오:"))
+# Result = print_sum(num1,num2)
+# print(Result)
 
-   if Choice == 1:
-       return add(FirstNum,SecondNum)
+#219번 두 개의 숫자를 입력받아 합/차/곱/나눗셈을 출력하는 print_arithmetic_operation 함수를 작성하라.
 
-   elif Choice == 2 :
-       return sub(FirstNum,SecondNum)
-
-   elif Choice == 3:
-       return mul(FirstNum, SecondNum)
-
-   elif Choice == 4:
-       return div(FirstNum, SecondNum)
-
-   elif Choice == 5:
-       return power(FirstNum, SecondNum)
-
-   else:
-       return "잘못된 선택입니다."
-
-
-
-FirstNum = int(input("첫번째 숫자를 입력하세요:"))
-while True:
-    Choice = input("수식을 입력하세요 : 1) 더하기 , 2)빼기 , 3)곱하기 , 4)나누기, 5)거듭제곱 :")
-    SecondNum = int(input("두번째 숫자를 입력하세요:"))
-    if Choice == "1" or Choice == "1번" or Choice == "더하기" or Choice == "+":
-        Choice = 1
-
-    elif Choice == "2" or Choice == "2번" or Choice == "빼기" or Choice == "-":
-          Choice = 2
-
-    elif Choice == "3" or Choice == "3번" or Choice == "곱하기" or Choice == "*":
-          Choice = 3
-
-    elif Choice == "4" or Choice == "4번" or Choice == "나누기" or Choice == "/":
-          Choice = 4
-
-    elif Choice == "5" or Choice == "5번" or Choice == "거듭제곱" or Choice == "**":
-          Choice = 5
-
-    LastNum = Calculator(FirstNum,Choice,SecondNum)
-    FirstNum = LastNum
-    print(FirstNum)
+# def print_arithmetic_operation(FirstNum,SecondNum):
+#     sum = FirstNum + SecondNum
+#     sub = FirstNum - SecondNum
+#     mul = FirstNum * SecondNum
+#     div = FirstNum / SecondNum
+#     return sum,sub,mul,div
+#
+# num1 = int(input("첫번째 숫자를 입력하시오:"))
+# num2 = int(input("두번째 숫자를 입력하시오:"))
+# Result = print_arithmetic_operation(num1,num2)
+# print(Result)
 
 
-# 시험 여러 숫자와 연산자를 받아서 한번에 처리하는 것을 도전
-# 구현하려는 방식 모든 계산을 한번에 받는다 예) 3*5 + (15/3) + 21 = 이라면
-# re.findall  을 이용하여 각 숫자 , 연산자 , 기호를 분리한다.
-# 아스키 코드를 이용하여 분리된 값의 우선순위를 지정한다.
-# 그 후에 계산한다.
+#220번 세 개의 숫자를 입력받아 가장 큰수를 출력하는 print_max 함수를 정의하라. 단 if 문을 사용해서 수를 비교하라.
+
+# def print_max(FirstNum,SecondNum,ThirdNum):
+#     MaxNum = 0
+#     if FirstNum > MaxNum:
+#         MaxNum =FirstNum
+#     if MaxNum < SecondNum:
+#         MaxNum = SecondNum
+#     if MaxNum < ThirdNum:
+#         MaxNum = ThirdNum
+#
+#     return MaxNum
+#
+# First_Num = int(input("첫번째 숫자를 입력하세요:"))
+# Second_Num = int(input("두번째 숫자를 입력하세요:"))
+# Third_Num = int(input("세번째 숫자를 입력하세요:"))
+#
+# Max_num = print_max(First_Num,Second_Num,Third_Num)
+# print(Max_num)
