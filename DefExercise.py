@@ -176,3 +176,58 @@ from zstandard.backend_cffi import STRATEGY_BTLAZY2
 #
 # Max_num = print_max(First_Num,Second_Num,Third_Num)
 # print(Max_num)
+
+# 221번 입력된 문자열을 역순으로 출력하는 print_reverse 함수를 정의하라.
+# def print_reverse(string):
+#     print(string[ : : -1])
+#
+# print_reverse("python")
+
+
+# 222번 성적 리스트를 입력 받아 평균을 출력하는 print_score 함수를 정의하라.
+# def print_score(FirstNom, SecondNum, ThirdNum):
+#     return (FirstNom + SecondNum + ThirdNum) / 3
+#
+# result = print_score(1,2,3)
+# print(result)
+
+# or
+
+# def print_score(ScoreList):
+#     return(sum(ScoreList)/len(ScoreList))
+#
+# result = print_score([1,2,3])
+# print(result)
+
+#223번 하나의 리스트를 입력받아 짝수만 화면에 출력하는 print_even 함수를 정의하라.
+# def print_even(List):
+#     for i in List:
+#         if i % 2 == 0:
+#             print(i)
+#
+# print_even([1, 3, 2, 10, 12, 11, 15])
+
+# 224번 하나의 딕셔너리를 입력받아 딕셔너리의 key 값을 화면에 출력하는 print_keys 함수를 정의하라.
+
+# def print_key(dic):
+#     for i in dic.keys(): # value 만 출력할 때는 keys 대신 values 를 넣으면 된다.
+#         print (i)
+#
+# print_key({"이름":"김말똥", "나이":30, "성별":0})
+
+
+#225 my_dict에는 날짜를 키값으로 OHLC가 리스트로 저장돼 있다.my_dict와 날짜 키값을 입력받아 OHLC 리스트를 출력하는 print_value_by_key 함수를 정의하라.
+
+# def print_value_by_key  (my_dict, key):
+#     print(my_dict[key])
+#
+# my_dict = {"10/26": [100, 130, 100, 100], "10/27": [10, 12, 10, 11]}
+# print_value_by_key  (my_dict, "10/26")
+
+#226번 입력 문자열을 한 줄에 다섯글자씩 출력하는 print_5xn(string) 함수를 작성하라.
+
+# def print_5xn(Str):
+#     print(Str[:5:])
+#     print(Str[5: : ])
+#
+# print_5xn("아이엠어보이유알어걸")
