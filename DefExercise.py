@@ -231,3 +231,64 @@ from zstandard.backend_cffi import STRATEGY_BTLAZY2
 #     print(Str[5: : ])
 #
 # print_5xn("아이엠어보이유알어걸")
+
+#227번 문자열과 한줄에 출력될 글자 수를 입력을 받아 한 줄에 입력된 글자 수만큼 출력하는 print_mxn(string) 함수를 작성하라.
+
+# def print_mxn(line, num):
+#     chunk_num = int(len(line) / num)
+#     for x in range(chunk_num + 1) :
+#         print(line[x * num: x * num + num])
+#
+# print_mxn("아이엠어보이유알어걸", 3)
+
+
+# 228번 연봉을 입력받아 월급을 계산하는 calc_monthly_salary(annual_salary) 함수를 정의하라. 회사는 연봉을 12개월로 나누어 분할 지급하며, 이 때 1원 미만은 버림한다.
+
+# def calc_monthly_salary(x):
+#     print(int(x / 12))
+#
+#
+# calc_monthly_salary(12000000)
+
+
+# 229번 아래 코드의 실행 결과를 예측하라.
+
+# def my_print (a, b) :
+#     print("왼쪽:", a)
+#     print("오른쪽:", b)
+#
+# my_print(a=100, b=200)
+
+# 왼쪽 100
+# 오른쪽 200
+
+
+# 230번 아래 코드의 실행 결과를 예측하라.
+
+# def my_print (a, b) :
+#     print("왼쪽:", a)
+#     print("오른쪽:", b)
+#
+# my_print(b=100, a=200)
+
+# 욎쪽 200
+#오른쪽 100
+
+# 231번 아래 코드를 실행한 결과를 예상하라.
+
+# def n_plus_1 (n) :
+#     result = n + 1
+#
+# n_plus_1(3)
+# print (result)
+
+# 틀렸음   정답 : 에러가 발생한다. 함수 안에서 계산된 것은 함수 밖에서는 접근이 불가능하다 마지막에 리턴이 필요함
+
+
+# 232번 문자열 하나를 입력받아 인터넷 주소를 반환하는 make_url 함수를 정의하라.
+
+# def make_url(urladdress):
+#     url = "www." + urladdress + ".com"
+#     return(url)
+#
+# print(make_url("naver"))
