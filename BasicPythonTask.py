@@ -272,20 +272,35 @@ from autopep8 import continued_indentation
 
 #영어로 된 문장을 입력하여 대문자와 소문자가 나온 횟수를 구하는 코드
 
-def CapitalSmallLetter(Instr):
-    num1 = 0
-    CapitalLetter = 0
-    SmallLetter = 0
-    while num1 < len(InStr):
-        if InStr[num1] > chr(64) and InStr[num1] < chr(91):
-            CapitalLetter += 1
-        elif InStr[num1] > chr(97) and InStr[num1] < chr(123):
-            SmallLetter += 1
-        num1 += 1
-    return CapitalLetter,SmallLetter
+# def CapitalSmallLetter(Instr):
+#     num1 = 0
+#     CapitalLetter = 0
+#     SmallLetter = 0
+#     while num1 < len(InStr):
+#         if InStr[num1] > chr(64) and InStr[num1] < chr(91):
+#             CapitalLetter += 1
+#         elif InStr[num1] > chr(97) and InStr[num1] < chr(123):
+#             SmallLetter += 1
+#         num1 += 1
+#     return CapitalLetter,SmallLetter
+#
+#
+# InStr = input("영어로 된 문장을 입력하세요:")
+# InStr1 = CapitalSmallLetter(InStr)
+# print(f"입력하신 문장의 대문자는 {InStr1[0]}개 입니다.")
+# print(f"입력하신 문장의 소문자는 {InStr1[1]}개 입니다.")
 
 
-InStr = input("영어로 된 문장을 입력하세요:")
-InStr1 = CapitalSmallLetter(InStr)
-print(f"입력하신 문장의 대문자는 {InStr1[0]}개 입니다.")
-print(f"입력하신 문장의 소문자는 {InStr1[1]}개 입니다.")
+# 뉴스 기사내용을 어절별로 카운팅하여 두번이상 나온 어절을 출력하기
+
+News  = "[스포티비뉴스=유현태 기자] 호날두는 왜 재계약을 바랄까? 호날두의 연봉 순위는 전 세계에서 6번째로 높다. 스페인 스포츠 신문 '마르카'는 18일(한국 시간) 세계 최고의 대우를 받는 선수 10명의 목록을 보도했다. 크리스티아누 호날두가 레알마드리드와 갈등을 빚으면서 이적설을 뿌리고 있다. 갈등은 호날두의 재계약 요구에 구단이 미적지근한 반응을 보이면서 시작됐다. 호날두보다 월등히 높은 연봉을 받는 이들이 있다. 네이마르는 지난해 여름 역대 최고 이적료를 기록하면서 파리생제르맹으로 이적했다. 그의 몸값은 무려 2억 2200만 유로. 연봉에서도 최고 대우는 기정사실이었다. 5년 계약을 맺으면서 네이마르는 3600만 유로의 연봉을 받게 됐다."
+
+NewsDivision = News.split(" ")
+print(NewsDivision)
+num1 = 0
+while num1 < len(NewsDivision):
+    print(NewsDivision[num1])
+    Count = NewsDivision.count(NewsDivision[num1])
+    if Count > 1:
+        print(f"{NewsDivision[num1]} 글자는 {Count}개 가 있습니다.")
+    num1 += 1
