@@ -299,8 +299,9 @@ NewsDivision = News.split(" ")
 print(NewsDivision)
 num1 = 0
 while num1 < len(NewsDivision):
-    print(NewsDivision[num1])
+    # print(NewsDivision[num1])
     Count = NewsDivision.count(NewsDivision[num1])
     if Count > 1:
         print(f"{NewsDivision[num1]} 글자는 {Count}개 가 있습니다.")
+        NewsDivision.remove(NewsDivision[num1])
     num1 += 1
