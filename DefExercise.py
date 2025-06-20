@@ -315,3 +315,61 @@ from zstandard.backend_cffi import STRATEGY_BTLAZY2
 #
 # dic1 =  ({"이름":"김말똥", "나이":30, "성별":0})
 # print_keys(dic1)
+
+# 225번 my_dict에는 날짜를 키값으로 OHLC가 리스트로 저장돼 있다. my_dict와 날짜 키값을 입력받아 OHLC 리스트를 출력하는 print_value_by_key 함수를 정의하라.
+
+
+# my_dict = {"10/26" : [100, 130, 100, 100],
+#            "10/27" : [10, 12, 10, 11]}
+#
+# def print_value_by_key (my_dict, key) :
+#     print(my_dict[key])
+#
+# print_value_by_key  (my_dict, "10/26")
+
+#233번 문자열을 입력받아 각 문자들로 구성된 리스트로 반환하는 make_list 함수를 정의하라.
+
+# def make_list(A):
+#     b = []
+#     for i in A :
+#         b.append(i)
+#     print(b)
+#
+# make_list("abcd")
+
+# 234번 숫자로 구성된 하나의 리스트를 입력받아, 짝수들을 추출하여 리스트로 반환하는 pickup_even 함수를 구현하라.
+
+# def pickup_even(my_list):
+#     num1 = 0
+#     List1 = []
+#     for i in my_list:
+#         if i % 2 == 0:
+#             List1.append(i)
+#     return (List1)
+#
+# print(pickup_even([3, 4, 5, 6, 7, 8]))
+
+# 235번 콤마가 포함된 문자열 숫자를 입력받아 정수로 변환하는 convert_int 함수를 정의하라.
+
+# def convert_int(Convert):
+#     num1 = ""
+#     Con = Convert.split(",")
+#     for i in Con:
+#         num1 = num1 + i
+#     print(int(num1))
+#
+# convert_int("1,234,567")
+
+#236번 아래 코드의 실행 결과를 예측하라.
+
+# def 함수(num) :
+#     return num + 4
+#
+# a = 함수(10)
+# b = 함수(a)
+# c = 함수(b)
+# print(c)
+#
+# 예측 : a 에 합수 10이 입력되어 4가 더해져 14가 됨
+#       b 에 a 함수값 14와 4가 더해져서 18이 됨
+#       c d에 b 함수값 18과 4가 더해져서 22가 됨
