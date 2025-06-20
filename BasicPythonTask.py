@@ -311,15 +311,45 @@ from autopep8 import continued_indentation
 
 # a = (3,1,2,1,3,5,4) 를 리스트 [5,4,3,2,1]로 출력
 
-Tuple = (3,1,2,1,3,5,4)
-List1 = []
-List2 = []
-for i in Tuple:
-    List1.append(i)
-List1 = set(List1)
-for j in List1:
-    List2.append(j)
-List1 = []
-for k in List2[::-1]:
-    List1.append(k)
-print(List1)
+# Tuple = (3,1,2,1,3,5,4)
+# List1 = []
+# List2 = []
+# for i in Tuple:
+#     List1.append(i)
+# List1 = set(List1)
+# for j in List1:
+#     List2.append(j)
+# List1 = []
+# for k in List2[::-1]:
+#     List1.append(k)
+# print(List1)
+
+# 함수의 매개변수로 시작과 끝 숫자를 받아 시작부터 끝까지의 모든 정수값의 합를 리턴하는 함수를 작성
+
+# def sum (start , end):
+#     num1 = 0
+#     for i in range(start,end + 1):
+#         num1 += i
+#     return num1
+#
+# print(sum(0,100))
+
+# 함수의 매개변수로 문자열을 포함하는 리스트가 입력될 때 각 문자열의 첫 세 글자로만 구성된 리스트를 리턴하는 함수를 작성
+# 예를 들어, ['Africa']가 입력될 때 함수의 리턴값은 ['Afr']
+
+# study = ['Java', 'Python', 'DataStructure', 'Algorithm', 'BigData']
+# def first3(subject):
+#     A = []
+#     if subject in study and subject == "Java":
+#         A.append('Jav')
+#     elif subject in study and subject == 'Python':
+#         A.append('Pyt')
+#     elif subject in study and subject == 'DataStructure':
+#         A.append('Dat')
+#     elif subject in study and subject == 'Algorithm':
+#         A.append('Alg')
+#     elif subject in study and subject == 'BigData':
+#         A.append('Big')
+#     return A
+#
+# print(first3('Java'))
