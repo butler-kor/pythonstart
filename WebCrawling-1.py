@@ -35,9 +35,9 @@
 
 # 새로운 크롤링 연습
 # 1. <body> 태그 안에 <div> 태그가 두개 포함  <body> 태그의 내용을 추출
-import requests
-from bs4 import BeautifulSoup
-import pandas as pd
+# import requests
+# from bs4 import BeautifulSoup
+# import pandas as pd
 
 # # 1번 예제
 # html_doc ="""
@@ -121,3 +121,29 @@ import pandas as pd
 # bs_obj = BeautifulSoup(html_doc , "html.parser")
 # clothes = bs_obj.find_all("table",{"border" : "2"})
 # print(clothes)  #<table border="2">의 내용만 출력
+
+# 20250627 예스24 1위부터 10위까지 크롤링
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+Headers = {'User-Agent' : 'Mozilla/5.0 (Window NT 10.0 : Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) chrome / 128.0.0.0 Sarari/537.36'}
+url ='https://www.yes24.com/main/default.aspx'
+res = requests.get(url)
+# print(res) # Response[200] 이 뜨면 정상
+soup = BeautifulSoup(res.text,'html.parser')
+
+books = soup.select('li.tp02')
+# print(books)
+booklist = []
+
+for book in books :
+    rank = book.select('strong')[0].text
+    title = book.select('strong')[1].text
+    author = book.select('em')[1].text
+    url = 'https://www.yes24.com' + book.select_one('a')['href']
+    booklist.append([rank, title, author, url])
+    print(rank,title,author,url)
+
+df = pd.DataFrame(booklist,columns=['순위','제목','저자','링크'])
+df.to_excel('D:\파이썬 수업\git\pythonstart\yes24best10.xlsx', index=False)
