@@ -373,3 +373,82 @@ from zstandard.backend_cffi import STRATEGY_BTLAZY2
 # 예측 : a 에 합수 10이 입력되어 4가 더해져 14가 됨
 #       b 에 a 함수값 14와 4가 더해져서 18이 됨
 #       c d에 b 함수값 18과 4가 더해져서 22가 됨
+
+#237번 아래 코드의 실행 결과를 예측하라.
+
+# def 함수(num) :
+#     return num + 4
+#
+# c = 함수(함수(함수(10)))
+# print(c)
+#
+#  예측 : 가장 안쪽에 있는 함수가 10이며 10은 num이 된다. 10 + 4 = 14
+#         두번째 함수가 14이며 num 은 14가 된다 14 + 4 = 18
+#         마지막 함수가 18이며 num은 18이 된다 18 + 4 = 22
+
+#238번 아래 코드의 실행 결과를 예측하라.
+
+# def 함수1(num) :
+#     return num + 4
+#
+# def 함수2(num) :
+#     return num * 10
+#
+# a = 함수1(10)
+# c = 함수2(a)
+# print(c)
+
+# 예측 :  a는 함수1에 대입되며 num은 10이 된다 10 + 4 = 14
+#        c는  함수2에 대입되며 a의 값은 14이므로 num은 14가 된다. 14 * 10 = 140
+#        print(c)는 140을 출력한다.
+
+# 239번 아래 코드의 실행 결과를 예측하라.
+# def 함수1(num) :
+#     return num + 4
+#
+# def 함수2(num) :
+#     num = num + 2
+#     return 함수1(num)
+#
+# c = 함수2(10)
+# print(c)
+#
+# # 예측 : 틀렸음
+#          우선 함수2에 10으로 바인딩 num은 10이 됨 10 + 2 = 12
+#          함수1을 호출
+#          num은 12를 함수1로 보내 num은 12로 바인딩 12 + 4 = 16
+#          함수1의 동작이 끝나고 함수2 return으로 돌아옴
+#          함수2의 값은 16을 리턴 c는 16이 됨
+
+#240번 아래 코드의 실행 결과를 예측하라.
+
+# def 함수0(num) :
+#     return num * 2
+#
+# def 함수1(num) :
+#     return 함수0(num + 2)
+#
+# def 함수2(num) :
+#     num = num + 10
+#     return 함수1(num)
+#
+# c = 함수2(2)
+# print(c)
+#
+# 예측 : 함수2에 2를 바인딩 num은 2가 됨 2 + 10 = 12
+#        함수2는 함수1을 호출 num의 값 12는 함수1에 바인딩 num은 12가 됨 12 + 2 = 14
+#        함수1은 함수0을 호출 num의 값 14는 함수0에 바인딩 num은 14가 됨 14 * 2 = 28
+#        함수0의 동작이 끝나고 함수2로 돌아옴
+#        함수2는 최종 28을 리턴하고 c는 28을 반환받음
+
+#모듈
+#241번 datatime모듈을 사용해서 현재 시간 화면에 출력
+# import datetime
+# NowTime = datetime.datetime.now()
+# print(NowTime)
+
+#242번 datetime 모듈의 now 함수의 리턴 값의 타입을 화면에 출력해보세요.
+
+# import datetime
+# NowTime = datetime.datetime.now()
+# print(NowTime,type(NowTime))
