@@ -122,28 +122,49 @@
 # clothes = bs_obj.find_all("table",{"border" : "2"})
 # print(clothes)  #<table border="2">의 내용만 출력
 
+
+
+
 # 20250627 예스24 1위부터 10위까지 크롤링
+# import requests
+# from bs4 import BeautifulSoup
+# import pandas as pd
+#
+# Headers = {'User-Agent' : 'Mozilla/5.0 (Window NT 10.0 : Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) chrome / 128.0.0.0 Sarari/537.36'}
+# url ='https://www.yes24.com/main/default.aspx'
+# res = requests.get(url)
+# # print(res) # Response[200] 이 뜨면 정상
+# soup = BeautifulSoup(res.text,'html.parser')
+#
+# books = soup.select('li.tp02')
+# # print(books)
+# booklist = []
+#
+# for book in books :
+#     rank = book.select('strong')[0].text
+#     title = book.select('strong')[1].text
+#     author = book.select('em')[1].text
+#     url = 'https://www.yes24.com' + book.select_one('a')['href']
+#     booklist.append([rank, title, author, url])
+#     print(rank,title,author,url)
+#
+# df = pd.DataFrame(booklist,columns=['순위','제목','저자','링크'])
+# df.to_excel('D:\파이썬 수업\git\pythonstart\yes24best10.xlsx', index=False)
+
+
+
+#250701 뮤비차트 1위부터 20위  순위 / 제목 / 링크주소크롤링
+
 import requests
-from bs4 import BeautifulSoup
-import pandas as pd
+from bs4 import BeautifulSoup  # BeautifulSoup import
 
-Headers = {'User-Agent' : 'Mozilla/5.0 (Window NT 10.0 : Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) chrome / 128.0.0.0 Sarari/537.36'}
-url ='https://www.yes24.com/main/default.aspx'
-res = requests.get(url)
-# print(res) # Response[200] 이 뜨면 정상
-soup = BeautifulSoup(res.text,'html.parser')
-
-books = soup.select('li.tp02')
-# print(books)
-booklist = []
-
-for book in books :
-    rank = book.select('strong')[0].text
-    title = book.select('strong')[1].text
-    author = book.select('em')[1].text
-    url = 'https://www.yes24.com' + book.select_one('a')['href']
-    booklist.append([rank, title, author, url])
-    print(rank,title,author,url)
-
-df = pd.DataFrame(booklist,columns=['순위','제목','저자','링크'])
-df.to_excel('D:\파이썬 수업\git\pythonstart\yes24best10.xlsx', index=False)
+response = requests.get('https://m.moviechart.co.kr/rank/realtime/index/image')
+html = response.text
+soup = BeautifulSoup(html, 'html.parser')  # html.parser를 사용해서 soup에 넣겠다
+ranking = 1
+for b in soup.select("ul[class=movieBox-list] li[class=movieBox-item]"):
+    score = b.select('a p')[0]
+    tag = b.select('a')[0]
+    attr = tag.get('href')
+    name=b.select('div[class=movie-title] h3')[0]
+    print("순위: " + score.text + ", 제목: " + name.text + ", 주소: " + attr)
