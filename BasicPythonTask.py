@@ -353,3 +353,21 @@ from autopep8 import continued_indentation
 #     return A
 #
 # print(first3('Java'))
+
+# 369게임 만들기 숫자에 3,6,9가 들어가면 숫자 대신 "짝"을 출력하는 게임
+
+num1 = int(input("몇개의 369게임을 만들까요? : "))
+num2 = 0
+str1 = []
+str2 = ''
+str3 = ''
+for i in range(num1+1) :
+    str1.append(str(i))
+print(str1)
+while num2 < len(str1):
+    str2 = str1[num2]
+    if '3' in str2 or '6' in str2 or '9' in str2 :
+        print('짝')
+    else:
+        print(num2)
+    num2 = num2 + 1
