@@ -356,18 +356,53 @@ from autopep8 import continued_indentation
 
 # 369게임 만들기 숫자에 3,6,9가 들어가면 숫자 대신 "짝"을 출력하는 게임
 
-num1 = int(input("몇개의 369게임을 만들까요? : "))
+# num1 = int(input("몇개의 369게임을 만들까요? : "))
+# num2 = 0
+# str1 = []
+# str2 = ''
+# str3 = ''
+# for i in range(num1+1) :
+#     str1.append(str(i))
+# print(str1)
+# while num2 < len(str1):
+#     str2 = str1[num2]
+#     if '3' in str2 or '6' in str2 or '9' in str2 :
+#         print('짝')
+#     else:
+#         print(num2)
+#     num2 = num2 + 1
+
+# 넥슨 챌린지 출제문제   아래의 내용처럼 레시피를 만들어 봅시다.
+# 재료의 갯수 : 3
+# 창고에 있는 각각의 재료 갯수 : 8 7 9
+# 레시피에서 요구되는 각각의 재료 갯수 : 2 3 1
+#
+# 각각의 재료 갯수는 공백(띄어쓰기)으로 구분한다.
+
+List1 = []
+List2 = []
+List3 = []
+num1 = int(input("재료는 몇개가 있나요?:"))
+str1 = input("각각의 재료는 몇개씩 있나요?:(각각의 숫자는 띄어쓰기로 해주세요)")
+str2 = input("각각의 재료는 몇개씩 필요한가요?:(각각의 필요개수는 띄어쓰기로 해주세요)")
+List1 = str1.split(" ")
+List2 = str2.split(" ")
 num2 = 0
-str1 = []
-str2 = ''
-str3 = ''
-for i in range(num1+1) :
-    str1.append(str(i))
-print(str1)
-while num2 < len(str1):
-    str2 = str1[num2]
-    if '3' in str2 or '6' in str2 or '9' in str2 :
-        print('짝')
-    else:
-        print(num2)
+num3 = 0
+num4 = 0
+num5 = 0
+while num2 < num1:
+    num3 = int(List1[num2])
+    num4 = int(List2[num2])
+    num5 = 0
+    while num4 <= num3 :
+        num3 = num3 - num4
+        num5 = num5 + 1
+    List3.append(num5)
     num2 = num2 + 1
+num2= 0
+while num2 < len(List3)-1:
+    if List3[num2] > List3[num2+1]:
+        List3[num2],List3[num2+1] = List3[num2+1],List3[num2]
+    num2 = num2 + 1
+print(List3[0])
