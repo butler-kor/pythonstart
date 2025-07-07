@@ -463,3 +463,59 @@ from zstandard.backend_cffi import STRATEGY_BTLAZY2
 #     print(date)
 #  # 틀렸음
 
+
+# # 1부터 100까지 합을 구하는 코드를 def 로 만들기
+#
+# def add(i):
+#     a = 0
+#     for k in range(i+1):
+#         a += k
+#     return a
+#
+# print(add(100))
+#
+#
+# # 입력한 숫자에서 짝수만 추출하여 모두 더해보자
+# def add (i):
+#     a = 0
+#     for k in range(i + 1):
+#         if k % 2 == 0:
+#             a += k
+#     return a
+#
+# print(add(100))
+#
+# # 랜덤한 숫자 를 랜덤개를 만들고 숫자를 하나 받아서 그 숫자보다 작은 숫자를 출력한다.
+# import random
+# def random1(a,b):
+#     num1 = 0
+#     num2 = 0
+#     List1 = []
+#     List2 = []
+#     while num1 < a :
+#         num2 = random.randint(1,10)
+#         if num2 not in List1:
+#             List1.append(num2)
+#         num1 = num1 + 1
+#     num1 = 0
+#     while num1 < len(List1):
+#         if List1[num1] < b:
+#             num2 = List1[num1]
+#             List2.append(num2)
+#         num1 = num1 + 1
+#     return List2
+#
+# print(random1(10,7))
+
+# 자리수 더하기
+# def stradd(i):
+#     a = 0
+#     b = 0
+#     c = str(i)
+#     while a < len(c):
+#         b += int(c[a])
+#         a += 1
+#     return b
+#
+#
+# print(stradd('12345'))
