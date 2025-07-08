@@ -519,3 +519,25 @@ from zstandard.backend_cffi import STRATEGY_BTLAZY2
 #
 #
 # print(stradd('12345'))
+
+
+# 팩토리얼
+def add(i):
+    a= 0
+    for k in range(i+1):
+        a += k
+    return a
+
+print(add(100))
+
+# 지수 구하기
+def jisu(a,n):
+    num1 = a
+    num2 = 1
+    for i in range(n):
+        num2 *= a
+    return num2
+
+a = 2
+n = 4
+print(jisu(a,n))
