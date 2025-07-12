@@ -379,30 +379,86 @@ from autopep8 import continued_indentation
 #
 # 각각의 재료 갯수는 공백(띄어쓰기)으로 구분한다.
 
-List1 = []
-List2 = []
-List3 = []
-num1 = int(input("재료는 몇개가 있나요?:"))
-str1 = input("각각의 재료는 몇개씩 있나요?:(각각의 숫자는 띄어쓰기로 해주세요)")
-str2 = input("각각의 재료는 몇개씩 필요한가요?:(각각의 필요개수는 띄어쓰기로 해주세요)")
-List1 = str1.split(" ")
-List2 = str2.split(" ")
-num2 = 0
-num3 = 0
-num4 = 0
-num5 = 0
-while num2 < num1:
-    num3 = int(List1[num2])
-    num4 = int(List2[num2])
-    num5 = 0
-    while num4 <= num3 :
-        num3 = num3 - num4
-        num5 = num5 + 1
-    List3.append(num5)
-    num2 = num2 + 1
-num2= 0
-while num2 < len(List3)-1:
-    if List3[num2] > List3[num2+1]:
-        List3[num2],List3[num2+1] = List3[num2+1],List3[num2]
-    num2 = num2 + 1
-print(List3[0])
+# List1 = []
+# List2 = []
+# List3 = []
+# num1 = int(input("재료는 몇개가 있나요?:"))
+# str1 = input("각각의 재료는 몇개씩 있나요?:(각각의 숫자는 띄어쓰기로 해주세요)")
+# str2 = input("각각의 재료는 몇개씩 필요한가요?:(각각의 필요개수는 띄어쓰기로 해주세요)")
+# List1 = str1.split(" ")
+# List2 = str2.split(" ")
+# num2 = 0
+# num3 = 0
+# num4 = 0
+# num5 = 0
+# while num2 < num1:
+#     num3 = int(List1[num2])
+#     num4 = int(List2[num2])
+#     num5 = 0
+#     while num4 <= num3 :
+#         num3 = num3 - num4
+#         num5 = num5 + 1
+#     List3.append(num5)
+#     num2 = num2 + 1
+# num2= 0
+# while num2 < len(List3)-1:
+#     if List3[num2] > List3[num2+1]:
+#         List3[num2],List3[num2+1] = List3[num2+1],List3[num2]
+#     num2 = num2 + 1
+# print(List3[0])
+
+
+
+# 뤼튼ai def 문제 1
+# def get_ready_gadgets(gadget_inventory, target_status):
+#     result = []
+#     for gadget in gadget_inventory:
+#         if gadget['status'] == target_status:
+#             result.append(gadget['name'])
+#     return result
+#
+# batman_gadgets = [
+#     {'name': '배터랭', 'status': '준비 완료'},
+#     {'name': '갈고리총', 'status': '충전 중'},
+#     {'name': '연막탄', 'status': '준비 완료'},
+#     {'name': '박쥐 시그널', 'status': '고장'}
+# ]
+#
+# print(get_ready_gadgets(batman_gadgets, '준비 완료'))  # ➜ ['배터랭', '연막탄']
+# print(get_ready_gadgets(batman_gadgets, '고장'))       # ➜ ['박쥐 시그널']
+# print(get_ready_gadgets(batman_gadgets, '분실'))       # ➜ []
+#
+#
+# # 뤼튼 ai def 문제 2
+#
+#
+# def count_villain_mentions(report_id, villain_involved):
+#     result = []
+#     num1 = 0
+#     for gg in report_id :
+#         if gg['villain_involved'] == villain_involved:
+#             result.append(gg['report_id'])
+#             num1 +=1
+#     return num1
+#
+# crime_reports =[{'report_id': 1, 'villain_involved': '조커'}, {'report_id': 2, 'villain_involved': '펭귄'}, {'report_id': 3, 'villain_involved': '조커'}]
+#
+# print(count_villain_mentions(crime_reports,'펭귄'))
+
+# 뤼튼 ai def 문제 3
+
+def calculate_average_threat(gotham_id,type):
+    num1 = 0
+    num2 = 0
+    for aa in gotham_id :
+        if aa['type'] == type:
+            num1 += aa['threat_level']
+            num2 = num2 + 1
+    if num2 == 0:
+        return 0.0
+    return num1 / num2
+
+gotham_population = [ {'name': '조커', 'type': 'villain', 'threat_level': 9}, {'name': '배트맨', 'type': 'hero', 'threat_level': 8}, {'name': '펭귄', 'type': 'villain', 'threat_level': 6}, {'name': '로빈', 'type': 'hero', 'threat_level': 7}, {'name': '알프레드', 'type': 'citizen', 'threat_level': 1}, {'name': '리들러', 'type': 'villain', 'threat_level': 7} ]
+print(calculate_average_threat(gotham_population, 'villain'))
+print(calculate_average_threat(gotham_population, 'hero'))
+print(calculate_average_threat(gotham_population, 'sidekick'))
