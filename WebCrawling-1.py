@@ -155,16 +155,73 @@
 
 #250701 뮤비차트 1위부터 20위  순위 / 제목 / 링크주소크롤링
 
-import requests
-from bs4 import BeautifulSoup  # BeautifulSoup import
+# import requests
+# from bs4 import BeautifulSoup  # BeautifulSoup import
+#
+# response = requests.get('https://m.moviechart.co.kr/rank/realtime/index/image')
+# html = response.text
+# soup = BeautifulSoup(html, 'html.parser')  # html.parser를 사용해서 soup에 넣겠다
+# ranking = 1
+# for b in soup.select("ul[class=movieBox-list] li[class=movieBox-item]"):
+#     score = b.select('a p')[0]
+#     tag = b.select('a')[0]
+#     attr = tag.get('href')
+#     name=b.select('div[class=movie-title] h3')[0]
+#     print("순위: " + score.text + ", 제목: " + name.text + ", 주소: " + attr)
 
-response = requests.get('https://m.moviechart.co.kr/rank/realtime/index/image')
+
+
+# 250710 수업 선생님 코드 (교육용 기록)
+# import requests
+# from bottleneck import rankdata
+# from bs4 import BeautifulSoup  # BeautifulSoup import
+# from pyparsing import nullDebugAction
+#
+# response = requests.get('https://www.aladin.co.kr/shop/common/wbest.aspx?BranchType=1')
+# html = response.text
+# soup = BeautifulSoup(html, 'html.parser')  # html.parser를 사용해서 soup에 넣겠다
+# tit_category = ""
+# book_name = ""
+# auth = ""
+# company = ""
+# date = ""
+# for b in soup.select("div[class=ss_book_box]"):
+#     rank = b.select_one("table table div").text
+#     for i, info in enumerate(b.select("td > div > ul")):
+#         if i % 2 == 1:
+#             continue
+#         sub_info = info.select("li")
+#
+#         for j in sub_info:
+#             if "tit_category" in str(j):
+#                 tit_category = j.select_one("span[class=tit_category]").text
+#                 book_name = j.select_one("li > a[class=bo3]").text
+#             if "Author" in str(j):
+#                 p = j.text
+#                 auth = p.split(sep = '|')[0].strip()
+#                 company = p.split(sep='|')[1].strip()
+#                 date = p.split(sep='|')[2].strip()
+#
+#     print("순위: " + rank + "국내/해외: " + tit_category + "제목: " + book_name + "작가: " + auth + "출판사: " + company + "날짜: " + date)
+
+
+
+import requests
+from bottleneck import rankdata
+from bs4 import BeautifulSoup  # BeautifulSoup import
+from pyparsing import nullDebugAction
+
+response = requests.get('https://music.bugs.co.kr/chart')
 html = response.text
 soup = BeautifulSoup(html, 'html.parser')  # html.parser를 사용해서 soup에 넣겠다
-ranking = 1
-for b in soup.select("ul[class=movieBox-list] li[class=movieBox-item]"):
-    score = b.select('a p')[0]
-    tag = b.select('a')[0]
-    attr = tag.get('href')
-    name=b.select('div[class=movie-title] h3')[0]
-    print("순위: " + score.text + ", 제목: " + name.text + ", 주소: " + attr)
+albumname = ""
+artist = ""
+title = ""
+
+for b in soup.select("tbody  tr"):
+    rank = b.select_one("div[class] > strong").text
+    print(rank + "위")
+    for i, info in enumerate(b.select_one("tr td")) :
+        if i % 2 == 1:
+            continue
+        sub_info = info.select
