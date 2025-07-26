@@ -521,23 +521,46 @@ from zstandard.backend_cffi import STRATEGY_BTLAZY2
 # print(stradd('12345'))
 
 
-# 팩토리얼
-def add(i):
-    a= 0
-    for k in range(i+1):
-        a += k
-    return a
+# # 팩토리얼
+# def add(i):
+#     a= 0
+#     for k in range(i+1):
+#         a += k
+#     return a
+#
+# print(add(100))
+#
+# # 지수 구하기
+# def jisu(a,n):
+#     num1 = a
+#     num2 = 1
+#     for i in range(n):
+#         num2 *= a
+#     return num2
+#
+# a = 2
+# n = 4
+# print(jisu(a,n))
 
-print(add(100))
+# 약수 구하기
+def divisor(FirstNum,SecondNum):
+    num1 = 0
+    num2 = []
+    num3 = []
+    if FirstNum < SecondNum :
+        num1 = FirstNum
+        FirstNum = SecondNum
+        SecondNum = num1
+    num1 = 1
+    while num1 < FirstNum:
+        if FirstNum % num1 == 0:
+            num2.append(num1)
+        if SecondNum % num1 == 0:
+            num3.append(num1)
+        num1 = num1 + 1
+    print(num2)
+    print(num3)
+num1 = int(input("첫번째 숫자를 입력하세요:"))
+num2 = int(input("두번째 숫자를 입력하세요:"))
+divisor(num1,num2)
 
-# 지수 구하기
-def jisu(a,n):
-    num1 = a
-    num2 = 1
-    for i in range(n):
-        num2 *= a
-    return num2
-
-a = 2
-n = 4
-print(jisu(a,n))
