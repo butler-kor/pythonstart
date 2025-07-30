@@ -447,18 +447,30 @@ from autopep8 import continued_indentation
 
 # 뤼튼 ai def 문제 3
 
-def calculate_average_threat(gotham_id,type):
-    num1 = 0
-    num2 = 0
-    for aa in gotham_id :
-        if aa['type'] == type:
-            num1 += aa['threat_level']
-            num2 = num2 + 1
-    if num2 == 0:
-        return 0.0
-    return num1 / num2
+# def calculate_average_threat(gotham_id,type):
+#     num1 = 0
+#     num2 = 0
+#     for aa in gotham_id :
+#         if aa['type'] == type:
+#             num1 += aa['threat_level']
+#             num2 = num2 + 1
+#     if num2 == 0:
+#         return 0.0
+#     return num1 / num2
+#
+# gotham_population = [ {'name': '조커', 'type': 'villain', 'threat_level': 9}, {'name': '배트맨', 'type': 'hero', 'threat_level': 8}, {'name': '펭귄', 'type': 'villain', 'threat_level': 6}, {'name': '로빈', 'type': 'hero', 'threat_level': 7}, {'name': '알프레드', 'type': 'citizen', 'threat_level': 1}, {'name': '리들러', 'type': 'villain', 'threat_level': 7} ]
+# print(calculate_average_threat(gotham_population, 'villain'))
+# print(calculate_average_threat(gotham_population, 'hero'))
+# print(calculate_average_threat(gotham_population, 'sidekick'))
 
-gotham_population = [ {'name': '조커', 'type': 'villain', 'threat_level': 9}, {'name': '배트맨', 'type': 'hero', 'threat_level': 8}, {'name': '펭귄', 'type': 'villain', 'threat_level': 6}, {'name': '로빈', 'type': 'hero', 'threat_level': 7}, {'name': '알프레드', 'type': 'citizen', 'threat_level': 1}, {'name': '리들러', 'type': 'villain', 'threat_level': 7} ]
-print(calculate_average_threat(gotham_population, 'villain'))
-print(calculate_average_threat(gotham_population, 'hero'))
-print(calculate_average_threat(gotham_population, 'sidekick'))
+
+# 뤼튼 def 문제 4
+def calculate_total_loot_value(collected_items):
+    total = 0
+    for item in collected_items:
+        total += item['item_value']
+    return total
+
+batman_loot_1 = [{'item_name': '조커의_다이아몬드', 'item_value': 1000}, {'item_name': '펭귄의_고급_우산', 'item_value': 200}]
+batman_loot_2 = []
+print(calculate_total_loot_value(batman_loot_1))
