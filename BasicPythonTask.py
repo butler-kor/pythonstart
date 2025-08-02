@@ -465,12 +465,43 @@ from autopep8 import continued_indentation
 
 
 # 뤼튼 def 문제 4
-def calculate_total_loot_value(collected_items):
-    total = 0
-    for item in collected_items:
-        total += item['item_value']
-    return total
+# def calculate_total_loot_value(collected_items):
+#     total = 0
+#     for item in collected_items:
+#         total += item['item_value']
+#     return total
+#
+# batman_loot_1 = [{'item_name': '조커의_다이아몬드', 'item_value': 1000}, {'item_name': '펭귄의_고급_우산', 'item_value': 200}]
+# batman_loot_2 = []
+# print(calculate_total_loot_value(batman_loot_1))
 
-batman_loot_1 = [{'item_name': '조커의_다이아몬드', 'item_value': 1000}, {'item_name': '펭귄의_고급_우산', 'item_value': 200}]
-batman_loot_2 = []
-print(calculate_total_loot_value(batman_loot_1))
+# 뤼튼 def  문제 5
+def calculate_average_villains_in_successful_missions(mission_reports):
+    total_villains = 0
+    success_count = 0
+    for mission in mission_reports:
+        if mission['status'] == '성공':
+            total_villains += mission['villains_defeated_count']
+            success_count += 1
+    if success_count == 0:
+        return 0.0
+
+
+    return total_villains / success_count
+
+
+
+
+
+batman_mission_log = [{'mission_name': '조커_저지', 'status': '성공', 'villains_defeated_count': 5},
+                          {'mission_name': '펭귄_추적', 'status': '실패', 'villains_defeated_count': 2},
+                          {'mission_name': '리들러_체포', 'status': '성공', 'villains_defeated_count': 3},
+                          {'mission_name': '하비_덴트_보호', 'status': '성공', 'villains_defeated_count': 4},
+                          {'mission_name': '은행_강도_진압', 'status': '진행 중', 'villains_defeated_count': 1}]
+
+no_successful_missions_log = [ {'mission_name': '탈옥수_추적', 'status': '실패', 'villains_defeated_count': 2},
+                               {'mission_name': '새로운_위협_분석', 'status': '진행 중', 'villains_defeated_count': 0} ]
+
+
+print(calculate_average_villains_in_successful_missions(batman_mission_log))
+print(calculate_average_villains_in_successful_missions(no_successful_missions_log))
