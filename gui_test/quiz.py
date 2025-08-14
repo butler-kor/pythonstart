@@ -73,10 +73,10 @@ def goto_url(url):
 
 def check_answer(correct_answer, user_answer):
     if correct_answer == user_answer:
-        goto_url("https://www.naver.com")
+        goto_url("https://www.youtube.com/shorts/BVJUrZSgplg")
         return True
     else:
-        goto_url("https://www.youtube.com")
+        goto_url("https://www.youtube.com/watch?v=ok03kNfAYB8")
         return False
 
 def wrong_answer():
